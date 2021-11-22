@@ -16,20 +16,6 @@ do {
     deuxiemeNombre = prompt("Quel est votre deuxième chiffre ou nombre ?");
 } while (isNaN(deuxiemeNombre) || deuxiemeNombre == null || deuxiemeNombre == "" || deuxiemeNombre == " ");
 
-switch (demandeOperation) {
-    case 1: addition();
-        break;
-    case 2: multiplication();
-        break;
-    case 3: soustraction();
-        break;
-    case 4: division();
-        break;
-
-        default: alert("Cette opération n'est pas disponible");
-        break;
-}
-
 function addition(nombreA, nombreB){
     let resultat = nombreA + nombreB;
     return resultat;
@@ -52,4 +38,18 @@ function division(nombreA, nombreB){
         let resultat = nombreA / nombreB;
         return resultat;
     }
+}
+
+switch (demandeOperation) {
+    case 1: addition();
+        break;
+    case 2: multiplication();
+        break;
+    case 3: soustraction();
+        break;
+    case 4: division();
+        break;
+
+        default: alert("Cette opération n'est pas disponible");
+        break;
 }
