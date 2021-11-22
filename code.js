@@ -11,12 +11,12 @@ do {
 
 do {
     premierNombre = parseFloat(prompt("Quel est votre premier chiffre ou nombre ?"));
-} while (isNaN(premierNombre) || premierNombre == null || premierNombre == "" || premierNombre == " ");
+} while (isNaN(premierNombre));
 
 
 do {
     deuxiemeNombre = parseFloat(prompt("Quel est votre deuxième chiffre ou nombre ?"));
-} while (isNaN(deuxiemeNombre) || deuxiemeNombre == null || deuxiemeNombre == "" || deuxiemeNombre == " ");
+} while (isNaN(deuxiemeNombre));
 
 
 function addition(nombreA, nombreB){
@@ -35,8 +35,8 @@ function soustraction(nombreA, nombreB){
 }
 
 function division(nombreA, nombreB){
-    if(nombreA == 0 || nombreB == 0){
-        alert("Vous ne pouvez pas diviser par 0 !");
+    if(deuxiemeNombre == 0){
+        alert("La division par 0 est interdite !");
     }else{
         resultat = nombreA / nombreB;
         return resultat;
@@ -53,8 +53,12 @@ switch (demandeOperation) {
     case 4: division(premierNombre, deuxiemeNombre);
         break;
 
-        default: alert("Cette opération n'est pas disponible");
+        default: alert("Une erreur est survenue");
         break;
 }
 
-alert("Le résultat de l'opération est : " + resultat + ".");
+if (resultat !== 0) {
+    alert("Le résultat est donc impossible à déterminer.");
+}else{
+    alert("Le résultat de l'opération est " + resultat + ".");
+}
