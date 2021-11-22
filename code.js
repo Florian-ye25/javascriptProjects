@@ -36,7 +36,7 @@ function soustraction(nombreA, nombreB){
 
 function division(nombreA, nombreB){
     if(deuxiemeNombre == 0){
-        alert("La division par 0 est interdite !");
+        throw new Error("Impossible de diviser par 0.");
     }else{
         resultat = nombreA / nombreB;
         return resultat;
@@ -56,12 +56,8 @@ try {
         default:
             throw new Error("Une erreur est survenue.");
     }
+    alert("Le résultat de l'opération est " + resultat + ".");
 } catch (error) {
     alert(error);
 }
  
-if (resultat !== 0) {
-    alert("Le résultat est donc impossible à déterminer.");
-}else{
-    alert("Le résultat de l'opération est " + resultat + ".");
-}
