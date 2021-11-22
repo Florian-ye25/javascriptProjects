@@ -43,20 +43,23 @@ function division(nombreA, nombreB){
     }
 }
 
-switch (demandeOperation) {
-    case 1: addition(premierNombre, deuxiemeNombre);
-        break;
-    case 2: multiplication(premierNombre, deuxiemeNombre);
-        break;
-    case 3: soustraction(premierNombre, deuxiemeNombre);
-        break;
-    case 4: division(premierNombre, deuxiemeNombre);
-        break;
-
-        default: alert("Une erreur est survenue");
-        break;
+try {
+    switch (demandeOperation) {
+        case 1: addition(premierNombre, deuxiemeNombre);
+            break;
+        case 2: multiplication(premierNombre, deuxiemeNombre);
+            break;
+        case 3: soustraction(premierNombre, deuxiemeNombre);
+            break;
+        case 4: division(premierNombre, deuxiemeNombre);
+            break;
+        default:
+            throw new Error("Une erreur est survenue.");
+    }
+} catch (error) {
+    alert(error);
 }
-
+ 
 if (resultat !== 0) {
     alert("Le résultat est donc impossible à déterminer.");
 }else{
